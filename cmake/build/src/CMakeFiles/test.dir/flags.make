@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sami/git/programs/cpp/hdf5daq/cmake -I/home/sami/git/programs/cpp/hdf5daq/include -I/home/sami/git/programs/cpp/hdf5daq/src
+CXX_INCLUDES = -I/home/sami/git/programs/cpp/hdf5daq/cmake -I/home/sami/git/programs/cpp/hdf5daq/include
 
-CXX_FLAGS = 
+CXX_FLAGS = -O3 -DNDEBUG
 

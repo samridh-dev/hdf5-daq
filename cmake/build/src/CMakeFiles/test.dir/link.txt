@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/test.dir/main.cpp.o -o /home/sami/git/programs/cpp/hdf5daq/bin/test 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/test.dir/main.cpp.o -o /home/sami/git/programs/cpp/hdf5daq/bin/test  -lhdf5 -lhdf5_cpp 

@@ -9,7 +9,8 @@ REPO_NAME="hdf5-daq"
 git clone https://github.com/samridh-dev/hdf5-daq.git $REPO_NAME
 pushd $REPO_NAME
 git submodule update --init --recursive
-mkdir -p cmake/build
+mkdir -p bin/ dat/
+mkdir -p cmake/build/
 pushd cmake/build
 cmake ../.. -Wdev
 make -j $(nproc)

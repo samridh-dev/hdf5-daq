@@ -13,10 +13,14 @@ int main() {
 
   class hdaq::interface interface("dat/data");
   interface.insert(a, "square func");
+  interface.insert(a, "square func");
+  interface.insert(a, "square func");
+  interface.insert(a, "square func");
+  interface.insert(a, "square func");
+  interface.insert(a, "square func");
+  interface.insert(a, "square func");
+
   interface.insert(b, "root func");
-
-  return 0;
-
 
   return 0;
 }

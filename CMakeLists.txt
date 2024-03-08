@@ -6,6 +6,8 @@ project(test
   LANGUAGES CXX
 )
 
+set(CMAKE_CXX_STANDARD 11)
+
 include(cmake/dependencies.cmake)
 include(cmake/include.cmake)
 

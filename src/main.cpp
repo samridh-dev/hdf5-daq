@@ -11,16 +11,16 @@ int main() {
   std::vector<double>b(N);
   for (int i = 0; i < b.size(); i++) b[i] = std::sqrt(i) / b.size();
 
+  std::vector<int>md(8);
+  for (int i = 0; i < md.size(); i++) md[i] = i;
+
   class hdaq::interface interface("dat/data");
   interface.insert(a, "square func");
-  interface.insert(a, "square func");
-  interface.insert(a, "square func");
-  interface.insert(a, "square func");
-  interface.insert(a, "square func");
-  interface.insert(a, "square func");
-  interface.insert(a, "square func");
+  interface.insert(b, "square func");
+  interface.add_attr(md, "metadata", "square func");
 
   interface.insert(b, "root func");
+
 
   return 0;
 }

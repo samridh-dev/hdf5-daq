@@ -17,10 +17,13 @@ int main() {
   class hdaq::interface interface("dat/data");
   interface.insert(a, "square func");
   interface.insert(b, "square func");
-  interface.add_attr(md, "metadata", "square func");
 
   interface.insert(b, "root func");
 
+  interface.add_attr(md, "metadata", "square func");
+
+  for (int i = 0; i < md.size(); i++) md[i] = -i;
+  interface.add_attr(md, "metadata 2", "square func");
 
   return 0;
 }

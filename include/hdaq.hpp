@@ -58,26 +58,57 @@ namespace hdaq {
 
       std::map<std::string, H5::DataSet> map_dset;
 
+      /**
+       * @brief Get the HDF5 data type for a given C++ data type.
+       * @return H5::PredType HDF5 data type.
+       * @tparam T C++ data type.
+       */      
       template <typename T>
       constexpr H5::PredType get_h5type();
       
-      /// get non-conflicting HDF5 filename
+      /**
+       * @brief Generate a HDF5-compatible file name from a given name.
+       * @param name Base name to convert.
+       * @param i index to append to the name.
+       * @return const std::string Generated HDF5 file name.
+       */
       const std::string 
       get_h5fname(const std::string& name, const unsigned int i = 0);
 
-      /// get HDF5 name and path of given name
+      /**
+       * @brief Parse a dataset name into its path and name components.
+       * @param name Full dataset name.
+       * @return const std::pair<std::string, std::string> Pair of path and
+       * dataset name.
+       */
       const std::pair<std::string, std::string>
       get_h5pathname(const std::string& name);
 
-      /// creates a new dataset
+      /**
+       * @brief Create a dataset within the HDF5 file.
+       * @param name Name of the dataset to create.
+       * @param size Initial size of the dataset.
+       * @return H5::DataSet The created dataset object.
+       * @tparam T Data type of the dataset.
+       */
       template <typename T>
       H5::DataSet dset_create(const std::string& name, const size_t size);
 
-      /// writes to dataset
+      /**
+       * @brief Write a vector of data to a dataset.
+       * @param vec Vector of data to write.
+       * @param name Name of the dataset to write to.
+       * @tparam T Type of data in the vector.
+       */
       template <typename T>
       void dset_write(const std::vector<T>& vec, const std::string& name);
 
-      /// appends to preexisting dataset
+      /**
+       * @brief Append a vector of data to a dataset.
+       * @param vec Vector of data to append.
+       * @param name Name of the dataset to append to.
+       * @tparam T Type of data in the vector.
+       */
       template <typename T>
       void dset_append(const std::vector<T>& vec, const std::string& name);
 

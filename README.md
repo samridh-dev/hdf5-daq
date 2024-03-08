@@ -19,6 +19,8 @@ popd
 
 ## Usage
 
+See example
+
 ## Example
 ```cpp
 #include <hdaq.hpp>

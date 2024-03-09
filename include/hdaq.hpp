@@ -16,12 +16,11 @@ namespace hdaq {
   template <typename T>
   class attribute: public std::vector<T> {
     public:
+      const std::string name;
 
       attribute(const std::string& n) : name(n) {}
       attribute(const std::string& n, const size_t size) : 
         std::vector<T>(size), name(n) {}
-
-      const std::string name;
   };
 
   /**
@@ -41,8 +40,6 @@ namespace hdaq {
        */
       interface(const std::string& fname);
 
-
-
       /**
        * @brief Main interfacing function. 
        * @param vec   : data vector to append to dataset
@@ -55,17 +52,15 @@ namespace hdaq {
       /**
        * @brief Main interfacing function. Note: Dataset must already exist 
        * when inserting attributes.
-       * @param avec  : attribute vector to append to dataset
-       * @param aname : name of attribute
-       * @param fname : name of dataset to attribute
-       * @tparam T    : avec type
+       * @param attr  : attribute class
+       * @param fname : name of dataset to write attribute to
+       * @tparam T    : attr type
        */
       template <typename T>
       void insert(const struct attribute<T>& attr, const std::string& fname);
 
     private:
       H5::H5File file;
-
       std::map<std::string, H5::DataSet> map_dset;
 
       /**

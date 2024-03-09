@@ -87,6 +87,10 @@ hdaq::interface::dset_append(
   const std::array<hsize_t,2> offs{{0, dims[1]}};
   const std::array<hsize_t,2> count{{dims[0], 1}};
 
+  if (vec.size() != dims[0]) {
+    throw std::runtime_error("vector is not of same size as dataset");
+  }
+
   dset.extend(ndims.data());
   H5::DataSpace nspace = dset.getSpace();
   nspace.selectHyperslab(H5S_SELECT_SET, count.data(), offs.data());

@@ -8,9 +8,21 @@
 
 #include <fstream>
 
+// main library
 #include <H5Cpp.h>
 
 namespace hdaq {
+
+  template <typename T>
+  class attribute: public std::vector<T> {
+    public:
+
+      attribute(const std::string& n) : name(n) {}
+      attribute(const std::string& n, const size_t size) : 
+        std::vector<T>(size), name(n) {}
+
+      const std::string name;
+  };
 
   /**
    * @class interface
@@ -29,6 +41,8 @@ namespace hdaq {
        */
       interface(const std::string& fname);
 
+
+
       /**
        * @brief Main interfacing function. 
        * @param vec   : data vector to append to dataset
@@ -36,7 +50,7 @@ namespace hdaq {
        * @tparam T    : vec type
        */
       template <typename T>
-      void insert(const std::vector<T>& vec, const std::string& fname);
+      void insert(const std::vector<T>& data, const std::string& fname);
 
       /**
        * @brief Main interfacing function. Note: Dataset must already exist 
@@ -47,11 +61,7 @@ namespace hdaq {
        * @tparam T    : avec type
        */
       template <typename T>
-      void add_attr(
-        const std::vector<T>& avec,
-        const std::string& aname,
-        const std::string& fname
-      );
+      void insert(const struct attribute<T>& attr, const std::string& fname);
 
     private:
       H5::H5File file;
@@ -114,6 +124,7 @@ namespace hdaq {
 
   };
 }
-#include <impl_hdaq.ipp>
+#include <impl_hdaq_public.ipp>
+#include <impl_hdaq_private.ipp>
 
 #endif

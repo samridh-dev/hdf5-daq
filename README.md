@@ -45,16 +45,16 @@ int main() {
   std::vector<double> data2(N);
   for (int i = 0; i < data2.size(); i++) data2[i] = pi / (2 * i);
   
-  /// data will be appended to dataset
+  /// data will be appended to the same dataset
   interface.insert(data2, "dataset");
 
-  /// create some metadata
-  std::vector<int>metadata(M);
+  /// create some attributes for our datataset
+  hdaq::attribute<int> metadata("metadata",M);
   for (int i = 0; i < metadata.size(); i++) metadata[i] = i;
 
   /// add metadata attribute to prexisting dataset
   /// NOTE: this function will fail in non existing datasets
-  interface.add_attr(metadata, "metadata", "dataset");
+  interface.insert(metadata, "dataset");
 
   return 0;
 }

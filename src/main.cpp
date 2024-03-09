@@ -23,7 +23,7 @@ int main() {
   /// data will be appended to the same dataset
   interface.insert(data2, "dataset");
 
-  /// create some metadata
+  /// create some attributes for our datataset
   hdaq::attribute<int> metadata("metadata",M);
   for (int i = 0; i < metadata.size(); i++) metadata[i] = i;
 
@@ -33,4 +33,3 @@ int main() {
 
   return 0;
 }
-

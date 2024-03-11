@@ -14,14 +14,3 @@ if (ENABLE_BUILD_EXAMPLE)
   )
 
 endif()
-
-if (ENABLE_BUILD_LIBRARY)
-
-  add_library(hdaq INTERFACE)
-  target_link_libraries(hdaq INTERFACE hdf5 hdf5_cpp)
-  target_include_directories(hdaq INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-  )
-
-endif()

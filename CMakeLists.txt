@@ -15,3 +15,13 @@ include(cmake/dependencies.cmake)
 include(cmake/include.cmake)
 
 add_subdirectory(src)
+
+if (ENABLE_BUILD_LIBRARY)
+
+  add_library(hdaq INTERFACE)
+  target_include_directories(hdaq INTERFACE 
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+  )
+  target_link_libraries(hdaq INTERFACE hdf5 hdf5_cpp)
+
+endif()

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.18)
 
+include(cmake/unset_opts.cmake)
+include(cmake/options.cmake)
+
 project(test
   VERSION 0.1
   DESCRIPTION "a basic hdf5 interface for data acquisiton"

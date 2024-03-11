@@ -1,8 +1,8 @@
 #include <hdaq.hpp>
 
-constexpr double pi = 3.1415926535898;
-constexpr double N = 1e4;
-constexpr double M = 16;
+const double pi = 3.1415926535898;
+const double N = 1e4;
+const double M = 16;
 
 int main() {
   

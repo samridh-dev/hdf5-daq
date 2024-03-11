@@ -69,7 +69,7 @@ namespace hdaq {
        * @tparam T C++ data type.
        */      
       template <typename T>
-      constexpr H5::PredType get_h5type();
+      const H5::PredType get_h5type();
       
       /**
        * @brief Generate a HDF5-compatible file name from a given name.

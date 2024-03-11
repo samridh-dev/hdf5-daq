@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-constexpr H5::PredType 
+const H5::PredType 
 hdaq::interface::get_h5type() {
   if (std::is_same<T, int>::value)         return H5::PredType::NATIVE_INT;
   else if (std::is_same<T, float>::value)  return H5::PredType::NATIVE_FLOAT;

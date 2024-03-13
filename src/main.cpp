@@ -21,6 +21,7 @@ int main() {
   for (int i = 0; i < data2.size(); i++) data2[i] = pi / (2 * i);
   
   /// data will be appended to the same dataset
+  /// NOTE: the vector must be of same size as the initial vector
   interface.insert(data2, "dataset");
 
   /// create some attributes for our datataset

@@ -9,8 +9,10 @@ if (ENABLE_BUILD_EXAMPLE)
 
   add_executable(hdf5daq_example ${SOURCE_EXEC})
   target_link_libraries(hdf5daq_example PRIVATE hdf5 hdf5_cpp)
-  set_target_properties(hdf5daq_example 
-    PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin"
-  )
+  if (ENABLE_BINARY_FOLDER)
+    set_target_properties(hdf5daq_example 
+      PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin"
+    )
+  endif()
 
 endif()

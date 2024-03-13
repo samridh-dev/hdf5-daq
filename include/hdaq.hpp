@@ -12,46 +12,39 @@
 #include <H5Cpp.h>
 
 namespace hdaq {
-
   template <typename T>
   class attribute: public std::vector<T> {
     public:
-  
-      // constructors
-      attribute(const std::string& n) : 
-        std::vector<T>(1), attr_name(n) {}
-
-      attribute(const std::string& n, const T element) : 
-        std::vector<T>(1, element), attr_name(n) {}
-
-      attribute(const std::string& n, std::initializer_list<T> ilist) : 
-        std::vector<T>(ilist), attr_name(n) {}
+      attribute(const std::string& n);
+      attribute(const std::string& n, const T element);
+      attribute(const std::string& n, const std::initializer_list<T> ilist);
       
-      // operator overloading
-      attribute<T>& operator=(const attribute<T>& other) {
-        if (this != &other) {
-          std::vector<T>::operator=(other);
-        }
-        return *this;
-      }
-      attribute<T>& operator=(const T other) {
-        if ((*this).empty()) {
-          (*this).push_back(other);
-        } else {
-          (*this)[0] = other;
-        }
-        return *this;
-      }
+      attribute<T>& operator=(const std::vector<T>& other);
+      attribute<T>& operator=(const T other);
 
-      // Member functions
-      const std::string name() const {
-        return attr_name;
-      }
+      const std::string name() const;
 
     private:
       const std::string attr_name;
   };
+}
+#include <attribute.ipp>
 
+namespace hdaq {
+  template <typename T>
+  class dataset: public std::vector<T> {
+    public:
+      dataset();
+      dataset(const T element);
+      dataset(const std::initializer_list<T> ilist);
+
+      dataset<T>& operator=(const std::vector<T>& other);
+      dataset<T>& operator=(const T other);
+  };
+}
+#include <dataset.ipp>
+
+namespace hdaq {
   /**
    * @class interface
    * @brief Class for handling new hdf5 files 
@@ -148,6 +141,7 @@ namespace hdaq {
 
   };
 }
+
 #include <impl_hdaq_public.ipp>
 #include <impl_hdaq_private.ipp>
 

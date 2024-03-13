@@ -2,13 +2,13 @@
 
 template <typename T>
 hdaq::attribute<T>::attribute(const std::string& n) : 
-  std::vector<T>(1), attr_name(n) {}
+  std::vector<T>(), attr_name(n) {}
 
 //////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-hdaq::attribute<T>::attribute(const std::string& n, const T element) : 
-  std::vector<T>(1, element), attr_name(n) {}
+hdaq::attribute<T>::attribute(const std::string& n, const size_t size) : 
+  std::vector<T>(size), attr_name(n) {}
 
 //////////////////////////////////////////////////////////////////////////////
 

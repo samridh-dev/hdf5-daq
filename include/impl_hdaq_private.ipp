@@ -60,7 +60,7 @@ hdaq::interface::dset_create(
 template <typename T>
 void
 hdaq::interface::dset_write(
-  const std::vector<T>& vec, 
+  const hdaq::dataset<T>& vec, 
   const std::string& name
 ) {
   H5::DataSet dset = dset_create<T>(name, vec.size());
@@ -72,7 +72,7 @@ hdaq::interface::dset_write(
 template <typename T>
 void
 hdaq::interface::dset_append(
-  const std::vector<T>& vec,
+  const hdaq::dataset<T>& vec,
   const std::string& name
 ) {
   if(map_dset.find(name) == map_dset.end()) {

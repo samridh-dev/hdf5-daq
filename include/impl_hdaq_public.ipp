@@ -8,7 +8,7 @@ hdaq::interface::interface(const std::string& fname) :
 
 template <typename T>
 void 
-hdaq::interface::insert(const std::vector<T>& vec, const std::string& fname) {
+hdaq::interface::insert(const class dataset<T>& vec, const std::string& fname) {
   const std::pair<std::string, std::string> pathname = get_h5pathname(fname);
   const std::string path = pathname.first;
   const std::string name = pathname.second;

@@ -16,7 +16,7 @@ namespace hdaq {
   class attribute: public std::vector<T> {
     public:
       attribute(const std::string& n);
-      attribute(const std::string& n, const T element);
+      attribute(const std::string& n, const size_t size);
       attribute(const std::string& n, const std::initializer_list<T> ilist);
       
       attribute<T>& operator=(const std::vector<T>& other);
@@ -35,7 +35,7 @@ namespace hdaq {
   class dataset: public std::vector<T> {
     public:
       dataset();
-      dataset(const T element);
+      dataset(const size_t size);
       dataset(const std::initializer_list<T> ilist);
 
       dataset<T>& operator=(const std::vector<T>& other);
@@ -69,7 +69,7 @@ namespace hdaq {
        * @tparam T    : vec type
        */
       template <typename T>
-      void insert(const std::vector<T>& data, const std::string& fname);
+      void insert(const class dataset<T>& data, const std::string& fname);
 
       /**
        * @brief Main interfacing function. Note: Dataset must already exist 
@@ -79,7 +79,7 @@ namespace hdaq {
        * @tparam T    : attr type
        */
       template <typename T>
-      void insert(const struct attribute<T>& attr, const std::string& fname);
+      void insert(const class attribute<T>& attr, const std::string& fname);
 
     private:
       H5::H5File file;
@@ -128,7 +128,7 @@ namespace hdaq {
        * @tparam T Type of data in the vector.
        */
       template <typename T>
-      void dset_write(const std::vector<T>& vec, const std::string& name);
+      void dset_write(const class dataset<T>& vec, const std::string& name);
 
       /**
        * @brief Append a vector of data to a dataset.
@@ -137,7 +137,7 @@ namespace hdaq {
        * @tparam T Type of data in the vector.
        */
       template <typename T>
-      void dset_append(const std::vector<T>& vec, const std::string& name);
+      void dset_append(const class dataset<T>& vec, const std::string& name);
 
   };
 }

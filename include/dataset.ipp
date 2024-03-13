@@ -7,8 +7,8 @@ hdaq::dataset<T>::dataset() :
 ///////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-hdaq::dataset<T>::dataset(const T element) : 
-  std::vector<T>(element) {}
+hdaq::dataset<T>::dataset(const size_t size) : 
+  std::vector<T>(size) {}
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>

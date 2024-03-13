@@ -10,14 +10,14 @@ int main() {
   class hdaq::interface interface("h5file");
   
   /// Create sample dataset
-  std::vector<double> data1(N);
+  class hdaq::dataset<double> data1(N);
   for (int i = 0; i < data1.size(); i++) data1[i] = i * pi / 2;
 
   /// write data into dataset
   interface.insert(data1, "dataset");
 
   /// create another sample
-  std::vector<double> data2(N);
+  class hdaq::dataset<double> data2(N);
   for (int i = 0; i < data2.size(); i++) data2[i] = pi / (2 * i);
   
   /// data will be appended to the same dataset

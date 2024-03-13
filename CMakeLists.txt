@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.18)
 
-include(cmake/unset_opts.cmake)
-include(cmake/options.cmake)
+include(cmake/unset_conf.cmake)
+include(cmake/config.cmake)
 
 project(test
   VERSION 0.1

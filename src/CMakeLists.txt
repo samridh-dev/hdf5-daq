@@ -4,7 +4,7 @@ if (ENABLE_BUILD_EXAMPLE)
 
   file(GLOB SOURCE_EXEC "*.cpp")
   if (NOT SOURCE_EXEC)
-    message(FATAL_ERROR "no source files for votess executable found.")
+    message(FATAL_ERROR "no source files for example executable found.")
   endif()
 
   add_executable(hdf5daq_example ${SOURCE_EXEC})

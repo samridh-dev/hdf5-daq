@@ -9,7 +9,7 @@ project(test
   LANGUAGES CXX
 )
 
-set(CMAKE_CXX_STANDARD 11)
+include(cmake/compiler_settings.cmake)
 
 include(cmake/dependencies.cmake)
 include(cmake/include.cmake)

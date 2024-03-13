@@ -6,6 +6,8 @@ Currently only source installation is possible.
 This run script will be sufficient to generate a working executable. Edit as
 you see fit.
 
+NOTE: to configure the project, refer to the /cmake/config.cmake file.
+
 ```bash
 REPO_NAME="hdf5-daq"
 git clone https://github.com/samridh-dev/hdf5-daq.git $REPO_NAME

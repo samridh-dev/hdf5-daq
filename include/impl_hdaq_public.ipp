@@ -34,7 +34,7 @@ hdaq::interface::insert(const std::vector<T>& vec, const std::string& fname) {
 template <typename T>
 void 
 hdaq::interface::insert(
-  const struct attribute<T>& attr,
+  const class attribute<T>& attr,
   const std::string& fname
 ) {
   const std::pair<std::string, std::string> pathname = get_h5pathname(fname);
@@ -53,7 +53,9 @@ hdaq::interface::insert(
     H5::DataSet& dset = map_dset[fname];
     H5::DataSpace adspace(1, dims.data());
 
-    H5::Attribute md = dset.createAttribute(attr.name, get_h5type<T>(), adspace);
+    H5::Attribute md = dset.createAttribute(
+      attr.name(), get_h5type<T>(), adspace
+    );
     md.write(get_h5type<T>(), attr.data());
 
   } catch (H5::FileIException error) {

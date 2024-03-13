@@ -16,11 +16,40 @@ namespace hdaq {
   template <typename T>
   class attribute: public std::vector<T> {
     public:
-      const std::string name;
+  
+      // constructors
+      attribute(const std::string& n) : 
+        std::vector<T>(1), attr_name(n) {}
 
-      attribute(const std::string& n) : name(n) {}
-      attribute(const std::string& n, const size_t size) : 
-        std::vector<T>(size), name(n) {}
+      attribute(const std::string& n, const T element) : 
+        std::vector<T>(1, element), attr_name(n) {}
+
+      attribute(const std::string& n, std::initializer_list<T> ilist) : 
+        std::vector<T>(ilist), attr_name(n) {}
+      
+      // operator overloading
+      attribute<T>& operator=(const attribute<T>& other) {
+        if (this != &other) {
+          std::vector<T>::operator=(other);
+        }
+        return *this;
+      }
+      attribute<T>& operator=(const T other) {
+        if ((*this).empty()) {
+          (*this).push_back(other);
+        } else {
+          (*this)[0] = other;
+        }
+        return *this;
+      }
+
+      // Member functions
+      const std::string name() const {
+        return attr_name;
+      }
+
+    private:
+      const std::string attr_name;
   };
 
   /**

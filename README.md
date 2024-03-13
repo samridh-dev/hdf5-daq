@@ -3,7 +3,9 @@ A simple hdf5 c++ library for data acquisition
 
 ## Installation
 Currently only source installation is possible.
-This run script will be sufficient to generate a working executable
+This run script will be sufficient to generate a working executable. Edit as
+you see fit.
+
 ```bash
 REPO_NAME="hdf5-daq"
 git clone https://github.com/samridh-dev/hdf5-daq.git $REPO_NAME
@@ -18,16 +20,27 @@ popd
 ```
 
 ## Usage
-
 See example
+
+### Cmake usage
+If hdf5daq is provided as a submodule, simply add this command to your
+CMakeLists.txt
+```cmake
+add_subdirectory(/path/to/hdf5daq-submodule)
+```
+
+If installed globally, then this command can also be used.
+```cmake
+find_package(hdf5daq-module)
+```
 
 ## Example
 ```cpp
 #include <hdaq.hpp>
 
-constexpr double pi = 3.1415926535898;
-constexpr double N = 1e4;
-constexpr double M = 16;
+const double pi = 3.1415926535898;
+const double N = 1e4;
+const double M = 16;
 
 int main() {
   
@@ -35,14 +48,14 @@ int main() {
   class hdaq::interface interface("h5file");
   
   /// Create sample dataset
-  std::vector<double> data1(N);
+  class hdaq::dataset<double> data1(N);
   for (int i = 0; i < data1.size(); i++) data1[i] = i * pi / 2;
 
   /// write data into dataset
   interface.insert(data1, "dataset");
 
   /// create another sample
-  std::vector<double> data2(N);
+  class hdaq::dataset<double> data2(N);
   for (int i = 0; i < data2.size(); i++) data2[i] = pi / (2 * i);
   
   /// data will be appended to the same dataset
@@ -59,6 +72,3 @@ int main() {
   return 0;
 }
 ```
-
-## TODO
-Make this fit to integrate with other projects

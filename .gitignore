@@ -9,3 +9,4 @@ bin/
 # ignore other files
 *.log
 *.h5
+*.bak

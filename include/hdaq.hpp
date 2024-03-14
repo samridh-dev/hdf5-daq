@@ -1,27 +1,35 @@
 #ifndef HDF5_DAQ_HPP
 #define HDF5_DAQ_HPP
 
+///////////////////////////////////////////////////////////////////////////////
+
 #include <vector>
 #include <array>
 #include <utility>
 #include <map>
-
 #include <fstream>
 
-// main library
+///////////////////////////////////////////////////////////////////////////////
+
 #include <H5Cpp.h>
+
+///////////////////////////////////////////////////////////////////////////////
 
 namespace hdaq {
   template <typename T>
   class attribute: public std::vector<T> {
     public:
+
+      /// constructors
       attribute(const std::string& n);
       attribute(const std::string& n, const size_t size);
       attribute(const std::string& n, const std::initializer_list<T> ilist);
       
+      /// operators
       attribute<T>& operator=(const std::vector<T>& other);
       attribute<T>& operator=(const T other);
 
+      /// member functions
       const std::string name() const;
 
     private:
@@ -30,19 +38,26 @@ namespace hdaq {
 }
 #include <attribute.ipp>
 
+///////////////////////////////////////////////////////////////////////////////
+
 namespace hdaq {
   template <typename T>
   class dataset: public std::vector<T> {
     public:
+      
+      /// constructors
       dataset();
       dataset(const size_t size);
       dataset(const std::initializer_list<T> ilist);
 
+      /// operators
       dataset<T>& operator=(const std::vector<T>& other);
       dataset<T>& operator=(const T other);
   };
 }
 #include <dataset.ipp>
+
+///////////////////////////////////////////////////////////////////////////////
 
 namespace hdaq {
   /**
@@ -141,8 +156,8 @@ namespace hdaq {
 
   };
 }
-
 #include <impl_hdaq_public.ipp>
 #include <impl_hdaq_private.ipp>
 
+///////////////////////////////////////////////////////////////////////////////
 #endif

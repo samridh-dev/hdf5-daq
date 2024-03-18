@@ -23,14 +23,15 @@ int main() {
   /// data will be appended to the same dataset
   /// NOTE: the vector must be of same size as the initial vector
   interface.insert(data2, "dataset");
-
+#if true
   /// create some attributes for our datataset
   hdaq::attribute<int> metadata("metadata",M);
   for (int i = 0; i < metadata.size(); i++) metadata[i] = i;
 
   /// add metadata attribute to prexisting dataset
   /// NOTE: this function will fail in non existing datasets
+  interface.insert(hdaq::attribute<float>("anon", {42.00f}), "dataset");
   interface.insert(metadata, "dataset");
-
+#endif
   return 0;
 }

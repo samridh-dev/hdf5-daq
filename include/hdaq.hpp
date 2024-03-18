@@ -23,6 +23,7 @@ namespace hdaq {
       /// constructors
       attribute(const std::string& n);
       attribute(const std::string& n, const size_t size);
+      attribute(const std::string& n, const std::vector<T>& vec);
       attribute(const std::string& n, const std::initializer_list<T> ilist);
       
       /// operators
@@ -48,6 +49,7 @@ namespace hdaq {
       /// constructors
       dataset();
       dataset(const size_t size);
+      dataset(const std::vector<T>& vec);
       dataset(const std::initializer_list<T> ilist);
 
       /// operators

@@ -6,6 +6,7 @@ hdaq::interface::get_h5type() {
   if (std::is_same<T, int>::value)         return H5::PredType::NATIVE_INT;
   else if (std::is_same<T, float>::value)  return H5::PredType::NATIVE_FLOAT;
   else if (std::is_same<T, double>::value) return H5::PredType::NATIVE_DOUBLE;
+  else if (std::is_same<T, bool>::value) return H5::PredType::NATIVE_HBOOL;
   return H5::PredType::NATIVE_DOUBLE;
 }
 
@@ -78,6 +79,7 @@ hdaq::interface::dset_append(
   if(map_dset.find(name) == map_dset.end()) {
     throw std::runtime_error("dataset not found");
   }
+
   H5::DataSet& dset = map_dset[name];
   H5::DataSpace dspace = dset.getSpace();
 

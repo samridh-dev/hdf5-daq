@@ -11,6 +11,13 @@ hdaq::dataset<T>::dataset(const size_t size) :
   std::vector<T>(size) {}
 
 ///////////////////////////////////////////////////////////////////////////////
+
+template <typename T>
+hdaq::dataset<T>::dataset(const std::vector<T>& vec) : 
+  std::vector<T>(vec) {}
+
+///////////////////////////////////////////////////////////////////////////////
+
 template <typename T>
 hdaq::dataset<T>::dataset(const std::initializer_list<T> ilist) :
   std::vector<T>(ilist) {}

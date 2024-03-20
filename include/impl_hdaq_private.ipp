@@ -38,7 +38,7 @@ hdaq::interface::get_h5pathname(const std::string& name) {
 
 template <typename T>
 H5::DataSet
-hdaq::interface::dset_create(
+hdaq::interface::create_dataset(
   const std::string& name,
   const size_t size
 ) {
@@ -64,7 +64,7 @@ hdaq::interface::dset_write(
   const hdaq::dataset<T>& vec, 
   const std::string& name
 ) {
-  H5::DataSet dset = dset_create<T>(name, vec.size());
+  H5::DataSet dset = create_dataset<T>(name, vec.size());
   dset.write(vec.data(), get_h5type<T>());
 }
 

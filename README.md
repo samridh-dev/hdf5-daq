@@ -36,6 +36,11 @@ If installed globally, then this command can also be used.
 find_package(hdf5daq-module)
 ```
 
+## Documentation
+
+For a detailed documentation on all availables classes and functions, refer to 
+the currently generated html documentation in ./docs/html/index.html
+
 ## Example
 ```cpp
 #include <hdaq.hpp>

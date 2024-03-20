@@ -3,7 +3,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
- /**
+/**
 \mainpage HDF5 Data Acquisition Library (HDAQ) Documentation
 
 # Overview
@@ -61,6 +61,10 @@ requirements.
 
 For detailed examples and further information on using each component of the
 library, refer to the specific sections of this documentation.
+
+# Note
+For additional reference on implementing hdf5 files please refer to the link:
+[https://docs.hdfgroup.org/hdf5/develop/_h_d_f5_examples.html]
 
 */
 

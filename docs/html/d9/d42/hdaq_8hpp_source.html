@@ -10,10 +10,6 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtreedata.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
 <script type="text/javascript" src="../../cookie.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
@@ -37,18 +33,6 @@
    </div>
    <div id="projectbrief">A simple hdf5 interface library for data acquisition.</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,23 +44,36 @@
 var searchBox = new SearchBox("searchBox", "../../search/",'.html');
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
+    </ul>
   </div>
-</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('d9/d42/hdaq_8hpp_source.html','../../'); initResizable(); });
+$(function() { codefold.init(1); });
 /* @license-end */
 </script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +95,11 @@ $(function(){initNavTree('d9/d42/hdaq_8hpp_source.html','../../'); initResizable
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">hdaq.hpp</div></div>
 </div><!--header-->
@@ -106,126 +108,122 @@ $(function(){initNavTree('d9/d42/hdaq_8hpp_source.html','../../'); initResizable
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define HDF5_DAQ_HPP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#include &lt;H5Cpp.h&gt;</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">namespace </span>hdaq {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00095" data-start="{" data-end="};">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../df/d6d/classhdaq_1_1attribute.html">   95</a></span>  <span class="keyword">class </span><a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute</a>: <span class="keyword">public</span> std::vector&lt;T&gt; {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">attribute</a>(<span class="keyword">const</span> std::string&amp; n);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">attribute</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../df/d6d/classhdaq_1_1attribute.html#ad4866e5aea458449104c01a0ab04f902">  118</a></span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ad4866e5aea458449104c01a0ab04f902">attribute</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">attribute</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> std::initializer_list&lt;T&gt; ilist);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#a3089551764a9a41b20cdb5c618aa9ddc">operator=</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; other);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      <a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#a3089551764a9a41b20cdb5c618aa9ddc">operator=</a>(<span class="keyword">const</span> T other);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <span class="keyword">const</span> std::string <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#a443122792a97422f3ff283e5aae606fa">name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#include &lt;H5Cpp.h&gt;</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">namespace </span>hdaq {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="};">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../df/d6d/classhdaq_1_1attribute.html">  101</a></span>  <span class="keyword">class </span><a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute</a>: <span class="keyword">public</span> std::vector&lt;T&gt; {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">attribute</a>(<span class="keyword">const</span> std::string&amp; n);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">attribute</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="../../df/d6d/classhdaq_1_1attribute.html#ad4866e5aea458449104c01a0ab04f902">  124</a></span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ad4866e5aea458449104c01a0ab04f902">attribute</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">attribute</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> std::initializer_list&lt;T&gt; ilist);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      <a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#a3089551764a9a41b20cdb5c618aa9ddc">operator=</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; other);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#a3089551764a9a41b20cdb5c618aa9ddc">operator=</a>(<span class="keyword">const</span> T other);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keyword">const</span> std::string attr_name; </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  };</div>
-</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#include &lt;attribute.ipp&gt;</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <span class="keyword">const</span> std::string <a class="code hl_function" href="../../df/d6d/classhdaq_1_1attribute.html#a443122792a97422f3ff283e5aae606fa">name</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">namespace </span>hdaq {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00172" data-start="{" data-end="};">
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="../../dd/d9c/classhdaq_1_1dataset.html">  172</a></span>  <span class="keyword">class </span><a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset</a>: <span class="keyword">public</span> std::vector&lt;T&gt; {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>();</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keyword">const</span> std::string attr_name; </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  };</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#include &lt;attribute.ipp&gt;</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keyword">namespace </span>hdaq {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="};">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="../../dd/d9c/classhdaq_1_1dataset.html">  178</a></span>  <span class="keyword">class </span><a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset</a>: <span class="keyword">public</span> std::vector&lt;T&gt; {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>(<span class="keyword">const</span> std::initializer_list&lt;T&gt; ilist);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; vec);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#ababa8c6d55102e2690a6287041bdfd4e">operator=</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; other);</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>      <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#ababa8c6d55102e2690a6287041bdfd4e">operator=</a>(<span class="keyword">const</span> T other);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  };</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">dataset</a>(<span class="keyword">const</span> std::initializer_list&lt;T&gt; ilist);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#ababa8c6d55102e2690a6287041bdfd4e">operator=</a>(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; other);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; <a class="code hl_function" href="../../dd/d9c/classhdaq_1_1dataset.html#ababa8c6d55102e2690a6287041bdfd4e">operator=</a>(<span class="keyword">const</span> T other);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  };</div>
 </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>}</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="preprocessor">#include &lt;dataset.ipp&gt;</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="keyword">namespace </span>hdaq {</div>
-<div class="foldopen" id="foldopen00226" data-start="{" data-end="};">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="../../d8/d85/classhdaq_1_1interface.html">  226</a></span>  <span class="keyword">class </span><a class="code hl_class" href="../../d8/d85/classhdaq_1_1interface.html">interface</a> {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#a50b2df121913a6c5b7f4077160c3faee">interface</a>(<span class="keyword">const</span> std::string&amp; fname);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      H5::DataSet <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#a8ac8902a8125ed3960ffaab52641c914">create_dataset</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#abce25c0c466cbda1b08c3479bca16e88">insert</a>(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; data, <span class="keyword">const</span> std::string&amp; fname);</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#abce25c0c466cbda1b08c3479bca16e88">insert</a>(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute&lt;T&gt;</a>&amp; attr, <span class="keyword">const</span> std::string&amp; fname);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      H5::H5File file;                             </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      std::map&lt;std::string, H5::DataSet&gt; map_dset; </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      <span class="keyword">const</span> H5::PredType get_h5type();</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>      <span class="keyword">const</span> std::string </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      get_h5fname(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0);</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      <span class="keyword">const</span> std::pair&lt;std::string,std::string&gt;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      get_h5pathname(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      <span class="keywordtype">void</span> dset_write(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; vec, <span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>      <span class="keywordtype">void</span> dset_append(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; vec, <span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  };</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>}</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#include &lt;dataset.ipp&gt;</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="keyword">namespace </span>hdaq {</div>
+<div class="foldopen" id="foldopen00232" data-start="{" data-end="};">
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="../../d8/d85/classhdaq_1_1interface.html">  232</a></span>  <span class="keyword">class </span><a class="code hl_class" href="../../d8/d85/classhdaq_1_1interface.html">interface</a> {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#a50b2df121913a6c5b7f4077160c3faee">interface</a>(<span class="keyword">const</span> std::string&amp; fname);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      H5::DataSet <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#a8ac8902a8125ed3960ffaab52641c914">create_dataset</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#abce25c0c466cbda1b08c3479bca16e88">insert</a>(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; data, <span class="keyword">const</span> std::string&amp; fname);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d85/classhdaq_1_1interface.html#abce25c0c466cbda1b08c3479bca16e88">insert</a>(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../df/d6d/classhdaq_1_1attribute.html">attribute&lt;T&gt;</a>&amp; attr, <span class="keyword">const</span> std::string&amp; fname);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      H5::H5File file;                             </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      std::map&lt;std::string, H5::DataSet&gt; map_dset; </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      <span class="keyword">const</span> H5::PredType get_h5type();</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      <span class="keyword">const</span> std::string </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      get_h5fname(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      <span class="keyword">const</span> std::pair&lt;std::string,std::string&gt;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      get_h5pathname(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>      <span class="keywordtype">void</span> dset_write(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; vec, <span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>      <span class="keywordtype">void</span> dset_append(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../dd/d9c/classhdaq_1_1dataset.html">dataset&lt;T&gt;</a>&amp; vec, <span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  };</div>
 </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="preprocessor">#include &lt;impl_hdaq_public.ipp&gt;</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="preprocessor">#include &lt;impl_hdaq_private.ipp&gt;</span></div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclasshdaq_1_1attribute_html"><div class="ttname"><a href="../../df/d6d/classhdaq_1_1attribute.html">hdaq::attribute</a></div><div class="ttdoc">Extends std::vector to manage attributes for HDF5 datasets.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:95</div></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>}</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">#include &lt;impl_hdaq_public.ipp&gt;</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="preprocessor">#include &lt;impl_hdaq_private.ipp&gt;</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclasshdaq_1_1attribute_html"><div class="ttname"><a href="../../df/d6d/classhdaq_1_1attribute.html">hdaq::attribute</a></div><div class="ttdoc">Extends std::vector to manage attributes for HDF5 datasets.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:101</div></div>
 <div class="ttc" id="aclasshdaq_1_1attribute_html_a3089551764a9a41b20cdb5c618aa9ddc"><div class="ttname"><a href="../../df/d6d/classhdaq_1_1attribute.html#a3089551764a9a41b20cdb5c618aa9ddc">hdaq::attribute::operator=</a></div><div class="ttdeci">attribute&lt; T &gt; &amp; operator=(const std::vector&lt; T &gt; &amp;other)</div><div class="ttdoc">Assigns the values of an existing std::vector to this attribute.</div><div class="ttdef"><b>Definition</b> attribute.ipp:26</div></div>
 <div class="ttc" id="aclasshdaq_1_1attribute_html_a443122792a97422f3ff283e5aae606fa"><div class="ttname"><a href="../../df/d6d/classhdaq_1_1attribute.html#a443122792a97422f3ff283e5aae606fa">hdaq::attribute::name</a></div><div class="ttdeci">const std::string name() const</div><div class="ttdoc">Retrieves the name of the attribute.</div><div class="ttdef"><b>Definition</b> attribute.ipp:47</div></div>
 <div class="ttc" id="aclasshdaq_1_1attribute_html_ad4866e5aea458449104c01a0ab04f902"><div class="ttname"><a href="../../df/d6d/classhdaq_1_1attribute.html#ad4866e5aea458449104c01a0ab04f902">hdaq::attribute::attribute</a></div><div class="ttdeci">attribute(const std::string &amp;n, const std::vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">Constructs an attribute from an existing std::vector, with a specified name.</div></div>
 <div class="ttc" id="aclasshdaq_1_1attribute_html_ae95d88479bf85070d528e9d23046f20b"><div class="ttname"><a href="../../df/d6d/classhdaq_1_1attribute.html#ae95d88479bf85070d528e9d23046f20b">hdaq::attribute::attribute</a></div><div class="ttdeci">attribute(const std::string &amp;n)</div><div class="ttdoc">Constructs an attribute with a specified name. The attribute is initially empty.</div><div class="ttdef"><b>Definition</b> attribute.ipp:4</div></div>
-<div class="ttc" id="aclasshdaq_1_1dataset_html"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html">hdaq::dataset</a></div><div class="ttdoc">Extends std::vector for specialized dataset management in HDF5 files.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:172</div></div>
+<div class="ttc" id="aclasshdaq_1_1dataset_html"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html">hdaq::dataset</a></div><div class="ttdoc">Extends std::vector for specialized dataset management in HDF5 files.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:178</div></div>
 <div class="ttc" id="aclasshdaq_1_1dataset_html_a51611344f3ccc9c30df834d9980fe0b9"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">hdaq::dataset::dataset</a></div><div class="ttdeci">dataset()</div><div class="ttdoc">Default constructor. Creates an empty dataset.</div><div class="ttdef"><b>Definition</b> dataset.ipp:4</div></div>
 <div class="ttc" id="aclasshdaq_1_1dataset_html_ababa8c6d55102e2690a6287041bdfd4e"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html#ababa8c6d55102e2690a6287041bdfd4e">hdaq::dataset::operator=</a></div><div class="ttdeci">dataset&lt; T &gt; &amp; operator=(const std::vector&lt; T &gt; &amp;other)</div><div class="ttdoc">Assigns the values of an existing std::vector to this dataset.</div><div class="ttdef"><b>Definition</b> dataset.ipp:29</div></div>
-<div class="ttc" id="aclasshdaq_1_1interface_html"><div class="ttname"><a href="../../d8/d85/classhdaq_1_1interface.html">hdaq::interface</a></div><div class="ttdoc">Manages HDF5 file creation and manipulation.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:226</div></div>
+<div class="ttc" id="aclasshdaq_1_1interface_html"><div class="ttname"><a href="../../d8/d85/classhdaq_1_1interface.html">hdaq::interface</a></div><div class="ttdoc">Manages HDF5 file creation and manipulation.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:232</div></div>
 <div class="ttc" id="aclasshdaq_1_1interface_html_a50b2df121913a6c5b7f4077160c3faee"><div class="ttname"><a href="../../d8/d85/classhdaq_1_1interface.html#a50b2df121913a6c5b7f4077160c3faee">hdaq::interface::interface</a></div><div class="ttdeci">interface(const std::string &amp;fname)</div><div class="ttdoc">Constructor to create a new HDF5 file.</div><div class="ttdef"><b>Definition</b> impl_hdaq_public.ipp:3</div></div>
 <div class="ttc" id="aclasshdaq_1_1interface_html_a8ac8902a8125ed3960ffaab52641c914"><div class="ttname"><a href="../../d8/d85/classhdaq_1_1interface.html#a8ac8902a8125ed3960ffaab52641c914">hdaq::interface::create_dataset</a></div><div class="ttdeci">H5::DataSet create_dataset(const std::string &amp;name, const size_t size)</div><div class="ttdoc">Creates a new dataset within the HDF5 file.</div><div class="ttdef"><b>Definition</b> impl_hdaq_private.ipp:41</div></div>
 <div class="ttc" id="aclasshdaq_1_1interface_html_abce25c0c466cbda1b08c3479bca16e88"><div class="ttname"><a href="../../d8/d85/classhdaq_1_1interface.html#abce25c0c466cbda1b08c3479bca16e88">hdaq::interface::insert</a></div><div class="ttdeci">void insert(const class dataset&lt; T &gt; &amp;data, const std::string &amp;fname)</div><div class="ttdoc">Writes or appends data to a dataset.</div><div class="ttdef"><b>Definition</b> impl_hdaq_public.ipp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>hdaq.hpp</b></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
 </body>
 </html>

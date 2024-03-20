@@ -7,5 +7,6 @@ var index =
       [ "dataset", "index.html#autotoc_md4", null ],
       [ "interface", "index.html#autotoc_md5", null ]
     ] ],
-    [ "Getting Started", "index.html#autotoc_md6", null ]
+    [ "Getting Started", "index.html#autotoc_md6", null ],
+    [ "Note", "index.html#autotoc_md7", null ]
 ];

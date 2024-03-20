@@ -10,10 +10,6 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtreedata.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
 <script type="text/javascript" src="../../cookie.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
@@ -37,18 +33,6 @@
    </div>
    <div id="projectbrief">A simple hdf5 interface library for data acquisition.</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,23 +44,36 @@
 var searchBox = new SearchBox("searchBox", "../../search/",'.html');
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
+    </ul>
   </div>
-</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('da/dfb/dataset_8ipp_source.html','../../'); initResizable(); });
+$(function() { codefold.init(1); });
 /* @license-end */
 </script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +95,11 @@ $(function(){initNavTree('da/dfb/dataset_8ipp_source.html','../../'); initResiza
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">dataset.ipp</div></div>
 </div><!--header-->
@@ -154,17 +156,13 @@ $(function(){initNavTree('da/dfb/dataset_8ipp_source.html','../../'); initResiza
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="ttc" id="aclasshdaq_1_1dataset_html"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html">hdaq::dataset</a></div><div class="ttdoc">Extends std::vector for specialized dataset management in HDF5 files.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:172</div></div>
+<div class="ttc" id="aclasshdaq_1_1dataset_html"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html">hdaq::dataset</a></div><div class="ttdoc">Extends std::vector for specialized dataset management in HDF5 files.</div><div class="ttdef"><b>Definition</b> hdaq.hpp:178</div></div>
 <div class="ttc" id="aclasshdaq_1_1dataset_html_a51611344f3ccc9c30df834d9980fe0b9"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html#a51611344f3ccc9c30df834d9980fe0b9">hdaq::dataset::dataset</a></div><div class="ttdeci">dataset()</div><div class="ttdoc">Default constructor. Creates an empty dataset.</div><div class="ttdef"><b>Definition</b> dataset.ipp:4</div></div>
 <div class="ttc" id="aclasshdaq_1_1dataset_html_ababa8c6d55102e2690a6287041bdfd4e"><div class="ttname"><a href="../../dd/d9c/classhdaq_1_1dataset.html#ababa8c6d55102e2690a6287041bdfd4e">hdaq::dataset::operator=</a></div><div class="ttdeci">dataset&lt; T &gt; &amp; operator=(const std::vector&lt; T &gt; &amp;other)</div><div class="ttdoc">Assigns the values of an existing std::vector to this dataset.</div><div class="ttdef"><b>Definition</b> dataset.ipp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>dataset.ipp</b></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
 </body>
 </html>

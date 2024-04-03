@@ -5,6 +5,7 @@ const H5::PredType
 hdaq::interface::get_h5type() {
   if (std::is_same<T, int>::value)         return H5::PredType::NATIVE_INT;
   else if (std::is_same<T, size_t>::value) return H5::PredType::NATIVE_HSIZE;
+  else if (std::is_same<T, time_t>::value) return H5::PredType::NATIVE_LONG;
   else if (std::is_same<T, float>::value)  return H5::PredType::NATIVE_FLOAT;
   else if (std::is_same<T, double>::value) return H5::PredType::NATIVE_DOUBLE;
   else if (std::is_same<T, bool>::value)   return H5::PredType::NATIVE_HBOOL;

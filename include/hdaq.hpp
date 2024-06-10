@@ -231,6 +231,17 @@ namespace hdaq {
    */
   class interface {
     public:
+
+      /**
+       * @brief Empty Constructor to create a new HDF5 file.
+       */
+      interface();
+
+      /**
+       * @brief Sets hdf5 filename, closing previous file
+       */
+      void set_filename(const std::string& fname);
+
       /**
        * @brief Constructor to create a new HDF5 file.
        * @param fname Name of the file without extension. Appends an index if
@@ -333,6 +344,7 @@ namespace hdaq {
       void dset_append(const class dataset<T>& vec, const std::string& name);
   };
 }
+
 #include <impl_hdaq_public.ipp>
 #include <impl_hdaq_private.ipp>
 

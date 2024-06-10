@@ -5,7 +5,7 @@ const double N = 1e4;
 const double M = 16;
 
 int main() {
-  
+
   /// create new HDF5 file
   class hdaq::interface interface("h5file");
   
